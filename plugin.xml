@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Mai Category"
+            id="com.generali.lena.tools.prodomalyaza.commands.category">
+      </category>
+      <command
+            name="Mai Command"
+            categoryId="com.generali.lena.tools.prodomalyaza.commands.category"
+            id="com.generali.lena.tools.prodomalyaza.commands.maiCommand">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            commandId="com.generali.lena.tools.prodomalyaza.commands.maiCommand"
+            class="com.generali.lena.tools.prodomalyaza.handlers.MaiHandler">
+      </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.generali.lena.tools.prodomalyaza.commands.maiCommand"
+            contextId="org.eclipse.ui.contexts.window"
+            sequence="M1+6"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration">
+      </key>
+   </extension>
+   <extension
+         point="org.eclipse.ui.menus">
+
+      <menuContribution
+            locationURI="toolbar:org.eclipse.ui.main.toolbar?after=additions">
+         <toolbar
+               id="com.generali.lena.tools.prodomalyaza.toolbars.maiToolbar">
+            <command
+                  commandId="com.generali.lena.tools.prodomalyaza.commands.maiCommand"
+                  icon="icons/lena4.png"
+                  tooltip="prodomalyaza"
+                  id="com.generali.lena.tools.prodomalyaza.toolbars.maiCommand">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   <extension point="org.eclipse.ui.views">
+        <view id="com.generali.lena.tools.prodomalyaza.maiStuff.MaiFrame"
+             name="ProDomAlyza"
+          class="com.generali.lena.tools.prodomalyaza.maiStuff.MaiFrame"
+          icon="icons\lena_trans.gif"/>
+</extension>
+</plugin>
